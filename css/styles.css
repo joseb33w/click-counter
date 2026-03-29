@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 24px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
+}
+
+.counter-display {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform 0.15s ease;
+  user-select: none;
+}
+
+.counter-display.pop {
+  transform: scale(1.1);
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+.btn-plus,
+.btn-minus {
+  width: 80px;
+  height: 80px;
+  font-size: 36px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-plus {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  box-shadow: 0 8px 30px rgba(67, 233, 123, 0.35);
+}
+
+.btn-plus:hover {
+  box-shadow: 0 12px 40px rgba(67, 233, 123, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-minus {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  box-shadow: 0 8px 30px rgba(245, 87, 108, 0.35);
+}
+
+.btn-minus:hover {
+  box-shadow: 0 12px 40px rgba(245, 87, 108, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-reset {
+  padding: 14px 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.btn-reset:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* Negative number turns red */
+.counter-display.negative {
+  background: linear-gradient(135deg, #f5576c, #ff6b6b, #f093fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Zero is dimmer */
+.counter-display.zero {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0.5;
+}
